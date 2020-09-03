@@ -2,7 +2,7 @@ package model;
 
 public class adicional {
     private int id_add;
-    private String omeCaldas_add;
+    private String nomeCaldas_add;
 
     public int getId_add() {
         return id_add;
@@ -12,11 +12,11 @@ public class adicional {
         this.id_add = id_add;
     }
 
-    public String getOmeCaldas_add() {
-        return omeCaldas_add;
+    public String getNomeCaldas_add() {
+        return nomeCaldas_add;
     }
 
-    public void setOmeCaldas_add(String omeCaldas_add) {
-        this.omeCaldas_add = omeCaldas_add;
+    public void setNomeCaldas_add(String nomeCaldas_add) {
+        this.nomeCaldas_add = nomeCaldas_add;
     }
 }
