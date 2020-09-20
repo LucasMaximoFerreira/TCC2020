@@ -4,25 +4,6 @@ create database casadoacai;
 
 use casadoacai;
 
-create table login_cliente
-(
-  id_logcli int not null auto_increment,
-  nome_logcli varchar(50) not null,
-  senha_logcli varchar(30) not null,
-  primary key (id_logcli)  
-);
-
-insert into login_cliente values(0,'Amaury','apjr031003');
-insert into login_cliente values(0,'Renan', 'acaiehbom212');
-insert into login_cliente values(0,'Lucas', 'vcehmaximo001');
-insert into login_cliente values(0,'João','felizdiasdospais012');
-insert into login_cliente values(0,'Ronaldo','vaquelivibes');
-insert into login_cliente values(0,'Maisa', 'boutmyself');
-insert into login_cliente values(0,'Ana', 'araia');
-insert into login_cliente values(0,'Emily','genteleiteroca');
-insert into login_cliente values(0,'Graziele', 'englishlife');
-insert into login_cliente values(0,'Isa','isahh123123');
-
 create table cadastro_cliente
 (
   id_cli int not null auto_increment,
@@ -36,23 +17,21 @@ create table cadastro_cliente
   email_cli varchar(50) not null,
   dtnasc_cli date not null,
   gen_cli char(2),
-  id_logcli int not null,
   primary key (id_cli),
   constraint id_cli unique (cpf_cli),
-  constraint ch_cli check (gen_cadcli in ("M" , "F", "PND")),
-  foreign key(id_logcli) references login_cliente (id_logcli)
+  constraint ch_cli check (gen_cadcli in ("M" , "F", "PND"))  
 );
 
-insert into cadastro_cliente values(0,'Amaury','apjr031003','43168371423','99623-9923','12209-270','344','','amaurypjr@gmail.com','1993-10-03','M','1');
-insert into cadastro_cliente values(0,'Renan','acaiehbom212','87065209212','99163-0912','12328-620','841','apartamento C27 Ala H','renansferreira@gmail.com','1992-04-17','M','2');
-insert into cadastro_cliente values(0,'Lucas','vcehmaximo001','97262412574','99773-1384','12238-080','231','','lucasmferreira@gmail.com','1990-05-21','M','3');
-insert into cadastro_cliente values(0,'João', 'felizdiasdospais012','17281701296', '98033-7625', '12223-120','357', 'apartamento N12 Ala F', 'joaopapereira@gmail.com', '1982-02-27','M','4');
-insert into cadastro_cliente values(0,'Ronaldo','vaquelivibes','43789326733','98636-9323','13209-230','123','','ronaldo0202@gmail.com','1993-10-03','M','5');
-insert into cadastro_cliente values(0,'Maisa', 'boutmyself','97865259322','99163-0292','15228-620','321','','boutmyself@gmail.com','1995-10-15','F','6');
-insert into cadastro_cliente values(0,'Ana','araia','93289421564','99123-1384','16215-213','223','','anabaranoski@gmail.com','2002-12-16','F','7');
-insert into cadastro_cliente values(0,'Emily','genteleiteroca', '87684531236', '98356-7625', '13215-412','657', '', 'emilyaraiaxaraia@gmail.com', '2002-02-20','F','8');
-insert into cadastro_cliente values(0,'Graziele','englishlife','33658893421','92636-9923','12209-224','334','','grazigameplays@gmail.com','2002-10-12','F','9');
-insert into cadastro_cliente values(0,'Isaela','isahh123123','98175310321','93123-1292','12228-120','8441','','isah123@gmail.com','2003-05-29','F','10');
+insert into cadastro_cliente values(0,'Amaury','apjr031003','43168371423','99623-9923','12209-270','344','','amaurypjr@gmail.com','1993-10-03','M');
+insert into cadastro_cliente values(0,'Renan','acaiehbom212','87065209212','99163-0912','12328-620','841','apartamento C27 Ala H','renansferreira@gmail.com','1992-04-17','M');
+insert into cadastro_cliente values(0,'Lucas','vcehmaximo001','97262412574','99773-1384','12238-080','231','','lucasmferreira@gmail.com','1990-05-21','M');
+insert into cadastro_cliente values(0,'João', 'felizdiasdospais012','17281701296', '98033-7625', '12223-120','357', 'apartamento N12 Ala F', 'joaopapereira@gmail.com', '1982-02-27','M');
+insert into cadastro_cliente values(0,'Ronaldo','vaquelivibes','43789326733','98636-9323','13209-230','123','','ronaldo0202@gmail.com','1993-10-03','M');
+insert into cadastro_cliente values(0,'Maisa', 'boutmyself','97865259322','99163-0292','15228-620','321','','boutmyself@gmail.com','1995-10-15','F');
+insert into cadastro_cliente values(0,'Ana','araia','93289421564','99123-1384','16215-213','223','','anabaranoski@gmail.com','2002-12-16','F');
+insert into cadastro_cliente values(0,'Emily','genteleiteroca', '87684531236', '98356-7625', '13215-412','657', '', 'emilyaraiaxaraia@gmail.com', '2002-02-20','F');
+insert into cadastro_cliente values(0,'Graziele','englishlife','33658893421','92636-9923','12209-224','334','','grazigameplays@gmail.com','2002-10-12','F');
+insert into cadastro_cliente values(0,'Isaela','isahh123123','98175310321','93123-1292','12228-120','8441','','isah123@gmail.com','2003-05-29','F');
 
 create table funcionario
 (
@@ -60,7 +39,7 @@ create table funcionario
   nome_func varchar(50) not null,
   cpf_func varchar(11) not null,
   tel_func varchar(20) not null,
-  cep_func varchar(20) not null,
+  cep_ varchar(20) not null,
   num_func varchar(10) not null,
   comp_func varchar(100) null,
   email_func varchar(50) not null,
@@ -87,8 +66,7 @@ create table tipo_prod
  nome_prod varchar(20) not null,
  qtdEst_tipo int not null,
  
- primary key(id_tipoProd),
- constraint ch_qtdEst check (qtdEst_tipo > 0)
+ primary key(id_tipoProd)
 );
 
 insert into tipo_prod values(0,'Açai','100'),(0,'Sacolé','2000'),(0,'Geladinho','30'),(0,'Sorvete','30'),(0,'Picolé','30'),(0,'Cremosinho','30');
@@ -96,6 +74,7 @@ insert into tipo_prod values(0,'Açai','100'),(0,'Sacolé','2000'),(0,'Geladinho',
 create table produto
 (
   id_prod int not null auto_increment,
+  nome_prod varchar(20) not null,
   id_tipoProd int not null,
   tam_prod varchar(100) not null,
   preco_prod float not null,
@@ -162,8 +141,3 @@ create table it_venda_adicional
    foreign key(id_add) references adicional(id_add),
    foreign key(id_it) references it_venda(id_it)
 );
-
-
-
-
-

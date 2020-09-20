@@ -5,7 +5,6 @@ import java.sql.Date;
 
 public class cadastro_cliente {
     private int id_cli;
-    private int id_logcli;
     private String nome_cli;
     private String senha_cli;
     private String cpf_cli;
@@ -23,14 +22,6 @@ public class cadastro_cliente {
 
     public void setId_cli(int id_cli) {
         this.id_cli = id_cli;
-    }
-
-    public int getId_logcli() {
-        return id_logcli;
-    }
-
-    public void setId_logcli(int id_logcli) {
-        this.id_logcli = id_logcli;
     }
 
     public String getNome_cli() {
