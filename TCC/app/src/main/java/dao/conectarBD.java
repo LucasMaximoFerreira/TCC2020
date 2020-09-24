@@ -166,7 +166,7 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             Date dataUtil = formato.parse(classeCli.getDtnasc_cli());
             java.sql.Date dataMYSQL = new java.sql.Date(dataUtil.getTime());
 
-            String sql = "insert into cadastro_cliente values (0,?,?,?,?,?,?,?)";
+            String sql = "insert into cadastro_cliente values (0,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, classeCli.getNome_cli());
             comando.setString(2, classeCli.getSenha_cli());

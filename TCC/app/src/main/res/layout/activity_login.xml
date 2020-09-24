@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="CPF" />
 
     <EditText
         android:id="@+id/txtSenha"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Senha" />
 
     <Button
         android:id="@+id/btnLogar"
