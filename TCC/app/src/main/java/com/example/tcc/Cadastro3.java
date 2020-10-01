@@ -14,7 +14,7 @@ import model.cadastro_cliente;
 public class Cadastro3 extends AppCompatActivity implements View.OnClickListener {
 
 
-    EditText txtCEP, txtNumero, txtComp;
+    EditText txtCEP, txtNumero, txtData;
     Button btnCad3;
 
     @Override
@@ -24,7 +24,7 @@ public class Cadastro3 extends AppCompatActivity implements View.OnClickListener
 
         txtCEP = findViewById(R.id.txtCEP);
         txtNumero = findViewById(R.id.txtNumero);
-        txtComp = findViewById(R.id.txtComp);
+        txtData = findViewById(R.id.txtData);
         btnCad3 = findViewById(R.id.btncad3);
 
         btnCad3.setOnClickListener(this);
@@ -34,20 +34,18 @@ public class Cadastro3 extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btncad3:
-                conectarBD cad3 = new conectarBD(this);
+                conectarBD cad = new conectarBD(this);
 
                 cadastro_cliente clienteTela = new cadastro_cliente();
 
                 clienteTela.setCep_cli(txtCEP.getText().toString());
                 clienteTela.setNum_cli(txtNumero.getText().toString());
-                clienteTela.setComp_cli(txtComp.getText().toString());
+                clienteTela.setDtnasc_cli(txtData.getText().toString());
 
-                cad3.setClasseCli(clienteTela);
+                cad.setClasseCli(clienteTela);
 
-                cad3.execute(0);
+                cad.execute(0);
 
-                Intent telaLogar = new Intent(this, Login.class);
-                startActivity(telaLogar);
                 break;
         }
     }

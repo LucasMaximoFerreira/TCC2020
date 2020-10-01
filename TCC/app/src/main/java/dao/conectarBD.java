@@ -126,12 +126,18 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
                     Toast.makeText(tela, "erro", Toast.LENGTH_SHORT).show();
                 }
                 break;
+
             case 1:
                 if (aBoolean == false) {
                     Toast.makeText(tela, "usuario nao cadastrado", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(tela, "usuario cadastrado", Toast.LENGTH_SHORT).show();
+
                 }
+
                 break;
         }
+
         dialogo.dismiss();
 
         disconnect();

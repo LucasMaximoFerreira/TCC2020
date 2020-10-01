@@ -13,7 +13,7 @@ import model.cadastro_cliente;
 
 public class Cadastro extends AppCompatActivity implements View.OnClickListener {
 
-    EditText txtNome, txtSenha, txtEmail, txtData;
+    EditText txtNome, txtSenha, txtEmail, txtComp;
     Button btnCad1;
 
     @Override
@@ -24,7 +24,7 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener 
         txtNome = findViewById(R.id.txtNome);
         txtSenha = findViewById(R.id.txtSenha);
         txtEmail = findViewById(R.id.txtEmail);
-        txtData = findViewById(R.id.txtData);
+        txtComp = findViewById(R.id.txtComp);
         btnCad1 = findViewById(R.id.btnCad1);
 
         btnCad1.setOnClickListener(this);
@@ -35,16 +35,16 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.btnCad1:
                 //criar uma instancia da classe conectarBD
-                conectarBD cad1 = new conectarBD(this);
+                conectarBD cad = new conectarBD(this);
 
                 cadastro_cliente clienteTela = new cadastro_cliente();
 
                 clienteTela.setNome_cli(txtNome.getText().toString());
                 clienteTela.setSenha_cli(txtSenha.getText().toString());
                 clienteTela.setEmail_cli(txtEmail.getText().toString());
-                clienteTela.setDtnasc_cli(txtData.getText().toString());
+                clienteTela.setComp_cli(txtComp.getText().toString());
 
-                cad1.setClasseCli(clienteTela);
+                cad.setClasseCli(clienteTela);
 
                 Intent telaCad2 = new Intent(this, Cadastro2.class);
                 startActivity(telaCad2);

@@ -37,12 +37,12 @@ public class Cadastro2 extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()){
             case R.id.btnCad2:
 
-                conectarBD cad2 = new conectarBD(this);
+                conectarBD cad = new conectarBD(this);
 
                 cadastro_cliente clienteTela = new cadastro_cliente();
 
                 clienteTela.setCpf_cli(txtCPF.getText().toString());
-                clienteTela.setCpf_cli(txtCPF.getText().toString());
+                clienteTela.setTel_cli(txtTelefone.getText().toString());
 
                 int opGen = rgGen.getCheckedRadioButtonId();
                 switch (opGen){
@@ -56,7 +56,7 @@ public class Cadastro2 extends AppCompatActivity implements View.OnClickListener
                         clienteTela.setGen_cli("Prefiro não dizer");
                         break;
                 }
-                cad2.setClasseCli(clienteTela);
+                cad.setClasseCli(clienteTela);
 
                 Intent telaCad3 = new Intent(this, Cadastro3.class);
                 startActivity(telaCad3);

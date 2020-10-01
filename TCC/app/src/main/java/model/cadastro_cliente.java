@@ -1,20 +1,20 @@
 package model;
 
 
-import java.sql.Date;
+
 
 public class cadastro_cliente {
-    private int id_cli;
-    private String nome_cli;
-    private String senha_cli;
-    private String cpf_cli;
-    private String tel_cli;
-    private String cep_cli;
-    private String num_cli;
-    private String comp_cli;
-    private String email_cli;
-    private String dtnasc_cli;
-    private String gen_cli;
+    private static int id_cli;
+    private static String nome_cli;
+    private static String senha_cli;
+    private static String cpf_cli;
+    private static String tel_cli;
+    private static String cep_cli;
+    private static String num_cli;
+    private static String comp_cli;
+    private static String email_cli;
+    private static String dtnasc_cli;
+    private static String gen_cli;
 
     public int getId_cli() {
         return id_cli;
